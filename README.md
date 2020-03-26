@@ -380,3 +380,200 @@ L’ajout des membres dans le groupe se fait via le menu « Equipements – List
 
 Sélectionnez les équipements que l’on souhaite ajouter au groupe, puis cliquez sur « Do it ».
 
+![](md_pics/hostbrowser.png)
+
+### h. Services Groups
+
+Ce menu permet de créer des regroupements de services. Pour ajouter un nouveau groupe, cliquez sur « Add A New Service Group ». Saisir un nom et une description.
+
+ 
+
+À l’instar de l’ajout de membres dans un « Host Group », il faut sélectionner les services qui vont constituer le « Service Group » unitairement depuis le menu « Service » de l’équipement.
+
+ 
+
+Sélectionnez le « Host », puis cliquez sur l’onglet « Services ».
+
+![](md_pics/servicesgroups1.png)
+
+Et ajoutez le service au « Service Group », puis cliquez sur « Add Service Group ».
+
+![](md_pics/servicesgroups2.png)
+
+## 2. Configuration des surveillances - Équipements
+
+Sélectionner ce menu pour lister/ajouter des équipements. 
+
+Pour afficher l’ensemble des équipements avec un accès à leur configuration, sélectionner « Lister ».
+
+![](md_pics/add_asset1.png)
+
+Pour ajouter un équipement, sélectionner « Ajouter ».
+
+![](md_pics/add_asset2.png)
+
+Entrez les informations de configuration du nouvel équipement à superviser : Nom, Description, Adresse IP, et attribuez-lui un Template en fonction de ses caractéristiques.
+
+![](md_pics/add_asset3.png)
+
+Puis cliquez sur "Add Host".
+
+Pour finaliser la création du "Host ". Il faut appliquer la configuration via le bouton "Restart". Le job de configuration peut être complet ou incrémental.
+
+![](md_pics/apply_config1.png)
+
+L’ajout d’un équipement peut être effectué via d’autres méthodes :
+
+- L'API REST de RGM qui permet l'ajout de "Host" sur le modèle suivant :
+
+![](md_pics/api_rest1.png)
+
+- L’inscription automatisée qui sera détaillée dans un chapitre ultérieur.
+
+## 3. Configuration des surveillances - Modèles
+
+Sélectionner ce menu pour Lister/Ajouter des Templates (Modèles).
+
+Les Templates sont utilisés pour prédéfinir des options communes à plusieurs hôtes ou services.
+
+Pour afficher l’ensemble des équipements avec un accès à leur configuration, sélectionner « Lister ».
+
+![](md_pics/list_model.png)
+
+Pour ajouter un modèle, sélectionner « Ajouter ».
+
+![](md_pics/add_model.png)
+
+Définir un Nom de Template et une description, puis cliquer sur « Add Host Template ».
+
+![](md_pics/add_model2.png)
+
+Définir « l’Inheritance » du Template. 
+
+Par défaut « Generic Host » sera utilisé, car il permet de définir une configuration commune sur les exécutions de check (période d’exécution, intervalle de contrôle, statut des notifications, utilisation du ping par défaut…).
+
+![](md_pics/add_model3.png)
+
+![](md_pics/add_model4.png)
+
+Désormais, on peut créer les services associés au Template depuis l’onglet « Services ».
+
+ 
+
+Saisir le Nom et la description. Puis utiliser « Generic Graph » ou « Generic Service » en fonction du résultat de la commande associée (si celle-ci permet de remonter des données de performance qui pourront être mises en forme par Grafana.
+
+ 
+
+Sélectionner la commande à associer au service en cochant « Provide value » pour accéder au menu déroulant des commandes.
+
+ 
+
+Ajuster les paramètres en fonction de la commande utilisée (voir les arguments définis dans la commande).
+
+Puis cliquez sur « Add Service ».
+
+![](md_pics/add_model5.png)
+
+Dès que le service est ajouté, il apparait sous le menu « Services ».
+
+Il est possible d’avoir le détail de celui-ci en cliquant sur son Nom.
+
+![](md_pics/add_model6.png)
+
+On peut retrouver de nombreuses informations comme nos valeurs d’arguments par exemple.
+
+![](md_pics/add_model7.png)
+
+Il est également possible d’opérer des sélections multiples, la possibilité de « dupliquer » la sélection ou la « supprimer ».
+
+![](md_pics/add_model8.png)
+
+## 4. Configuration des surveillances - Outils
+
+Le menu « Outils » permet plusieurs actions distinctes.
+
+### a. La découverte réseau
+
+Elle permet de découvrir et adresser directement les équipements avec un Template par défaut.
+
+![](md_pics/net_discovery.png)
+
+Définir un Nom de job, une description et sélectionner le « Template » par défaut que l’on souhaite attribuer.
+
+Enfin définir la cible de recherche, adresse IP seule ou « range IP ».
+
+![](md_pics/net_discovery2.png)
+
+Définir un Nom de job, une description et sélectionner le « Template » par défaut que l’on souhaite attribuer.
+
+Enfin définir la cible de recherche, adresse IP seule ou « range IP ».
+
+![](md_pics/net_discovery3.png)
+
+Puis cliquez de nouveau pour visualiser le résultat.
+
+![](md_pics/net_discovery4.png)
+
+Sélectionnez les machines que l’on souhaite importer et cliquez sur « Process ».
+
+![](md_pics/net_discovery5.png)
+
+On retrouve les équipements importés avec le Template associés depuis le menu « Equipements – Lister ».
+
+![](md_pics/net_discovery6.png)
+
+### b. L’import XML
+
+L’import XML permet l’ajout de configuration d’un Host, un Template ou Service principalement, via l’export d’un fichier « .xml » réalisé en amont.
+
+Pour réaliser un export de configuration, depuis le menu « Equipements – Lister », sélectionner l’élément à exporter, puis cliquer sur « Submit ».
+
+![](md_pics/import_xml1.png)
+
+Pour réaliser l’import de configuration, sélectionner le menu « Outils – Import XML ».
+
+![](md_pics/import_xml2.png)
+
+Cochez ou décochez les informations de « Contacts » et « Time Periods » liées à l’élément exporté. Puis rechercher le fichier « .xml » à importer.
+
+![](md_pics/import_xml3.png)
+
+Cliquez sur « Submit » pour réaliser l’import.
+
+### c. Appliquer la configuration
+
+Ce menu permet d’appliquer l’ensemble des modifications opérées au travers de l’interface d’administration. 
+
+**N.B** **: La configuration doit être appliquée après chaque modification ou configuration.**
+
+![](C:\git\RGM_Docs\md_pics\apply_config2.png)
+
+Chaque changement ou modification est enregistré dans des fichiers temporaires, mais n’est appliqué que lorsque l’export de configuration est lancé.
+
+ 
+
+Deux jobs d’export sont disponibles : « Complet » et « Incrémental ». 
+
+À choisir en fonction du nombre de changements opérés et de l’impact sur les performances du moteur Nagios.
+
+ 
+
+Pour lancer le job d’export, cliquez sur « Restart ».
+
+![](md_pics/apply_config3.png)
+
+Dès que le job d’export est terminé, vérifier son statut qui doit être « Succeded ».
+
+![](md_pics/apply_config4.png)
+
+En cas d’échec, vous pouvez consulter les logs disponibles sous le résultat pour identifier l’erreur de configuration.
+
+![](md_pics/apply_config5.png)
+
+On constate ici une erreur sur les valeurs de « max_check_attemps ». Ces valeurs sont définies par défaut via le Template « Generic Host » à minima. Celui-ci ne doit donc pas être affecté à l’équipement.
+
+![](md_pics/apply_config6.png)
+
+## 5. Applications
+
+La modélisation d’une application permet d’obtenir un statut unique d’un agrégat de point de contrôle sous-jacent.
