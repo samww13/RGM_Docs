@@ -67,7 +67,7 @@ Les indicateurs tels que CPU, RAM, DISK vont permettre de gérer le « Capacity 
 
 **Composants disponibles dans la solution :**
 
-![liste des composants](./md_pics/rgm_module.png)
+![liste des composants](md_pics/rgm_module.png)
 
 
 
