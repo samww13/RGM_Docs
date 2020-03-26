@@ -577,3 +577,5 @@ On constate ici une erreur sur les valeurs de « max_check_attemps ». Ces valeu
 ## 5. Applications
 
 La modélisation d’une application permet d’obtenir un statut unique d’un agrégat de point de contrôle sous-jacent.
+
+![](md_pics/nagiosBP_architecture.png)
