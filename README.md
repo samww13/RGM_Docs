@@ -120,5 +120,12 @@ Pour l'installation de la solution « RGM », se référer au chapitre d'install
 
 #    **IV.**      Accès à l'interface « RGMWEB »
 
-## 1. Accès à l'interface
+## 1. Accès à l'interface Web
 
+Pour accéder à l’interface web, il convient de saisir l’url du serveur web dans un navigateur :
+
+[https://nom_du_serveur/login.php##](https://nom_du_serveur/login.php)
+
+Le login par défaut pour accéder à l’interface est « admin:admin »
+
+![](C:\git\RGM_Docs\md_pics\screen_init_install.png)
