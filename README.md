@@ -266,3 +266,117 @@ Ce menu permet la configuration complète de la solution RGM, il sera donc déta
 
 ## 1. Configuration des surveillances - Paramètres
 
+![](md_pics/param_menu.png)
+
+### a. Nagios Daemon Configuration 
+
+Ce menu est utilisé pour la configuration globale du composant « Nagios » : Les paths, les valeurs de rétention et intervalles d’interrogation des points de contrôles, etc…
+
+Les valeurs par défaut sont optimales pour une utilisation classique de la solution RGM.
+
+### b. Nagios Web Interface Configuration
+
+Ce menu permet d’interagir sur la configuration globale de l’interface Web.
+
+Les valeurs par défaut sont optimales pour une utilisation classique de la solution RGM.
+
+### c. Nagios Ressources
+
+![](md_pics/nagios_ressources.png)
+
+Ce menu permet de paramétrer un ensemble de variables d’environnement, appelé « Ressources », nécessaires à l’exécution des points de contrôles. Par exemple :
+
+**$USER1$** : Correspond au chemin absolu du répertoire RGM contenant les scripts.
+
+**$USER2$ - $USER4$** : Représente la communauté SNMP utilisée pour les tests.
+
+**$USER5-$USER6$** : Utilisé pour définir des comptes de domaine Active Directory.
+
+ 
+
+L’ensemble des autres Ressources peuvent être utilisées pour définir des comptes d’accès à des équipements ou n’importes quelle autre variable d’environnement.
+
+ 
+
+Pour ajouter une ressource, entrez une valeur dans le champs d’une des ressources vides disponibles, puis cliquez sur « Update Ressource Configuration ». 
+
+Par exemple, la ressource qui contient la communauté « public » sera disponible sous la macro « **$USER3$** ».
+
+![](md_pics/nagios_ressources_ex.png)
+
+### d. Nagios Commands
+
+Ce menu permet de créer de nouvelles commandes d’exécution pour les points de contrôle. 
+
+ 
+
+Préalablement, le plugin doit être disponible dans le répertoire « /srv/rgm/nagios/plugins/rgm/xxxxx ». Pour plus de lisibilité, des sous répertoires par type d’équipements sont existants (ex : database, storage, etc…).
+
+![](md_pics/nagios_command_1.png)
+
+Créer ou déplacer votre plugin dans le répertoire dédié via SCP ou SFTP, puis définir les droits et attributs suivants : 
+
+![](md_pics/nagios_command_2.png)
+
+Lorsque le plugin est disponible dans l’arborescence, pour créer une nouvelle commande, cliquez sur « Add A New Command ».
+
+![](md_pics/nagios_command_3.png)
+
+Définir un nom dans le champ « Command Name »
+
+Définir la commande d’exécution dans le champ « Command Line ».
+
+Enfin saisir une description de la commande avec les valeurs possibles des arguments. 
+
+Les arguments peuvent être issus :
+
+- Nagios Ressources (ex : $USER1$, $USER2$…)
+
+- Macros interne à Nagios ( ex : $HOSTNAME$, $HOSTADDRESS$...)
+
+  https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/macrolist.html
+
+- Valeurs définies lors de la création des services (ex : $ARG1$, $ARG2$…)
+
+![](md_pics/nagios_command_4.png)
+
+Et cliquez sur « Create command ».
+
+![](md_pics/create_command.png)
+
+### e. Time Periods
+
+La section « Time Periods permet des définir des plages horaires d’exécution des commandes qui seront attribuées aux services par la suite.
+
+ 
+
+Pour définir une nouvelle plage horaire, cliquez sur « Add A New Time Period ». Saisir un nom et une description et enregistrer via le bouton « Create Time Period ».
+
+![](md_pics/time_period1.png)
+
+Sélectionner la nouvelle période est créer les plages horaires via le bouton « Add Entry ».
+
+![](md_pics/time_period2.png)
+
+Il est également possible de créer d’autres « Time Periods », plus courtes par exemple, et de s’en servir comme exclusion.
+
+![](md_pics/time_period3.png)
+
+### f. Contacts/Contact Groups
+
+**ATTENTION** **: Les contacts/ContactsGroups doivent être créés/ajoutés depuis la section « Gestion des comptes ».**
+
+Ce menu ne sera utilisé que dans le cadre de configurations particulières pour certains environnements.
+
+### g. Host Groups
+
+Ce menu permet de créer des regroupements d’équipements. Pour ajouter un nouveau groupe, cliquez sur « Add A New Host Group ». Saisir un nom et une description.
+
+![](md_pics/hostgroups.png)
+
+L’ajout des membres dans le groupe se fait via le menu « Equipements – Lister »
+
+![](md_pics/hostgroups2.png)
+
+Sélectionnez les équipements que l’on souhaite ajouter au groupe, puis cliquez sur « Do it ».
+
