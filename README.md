@@ -43,5 +43,32 @@
 > RGM est agnostique et flexible. La solution se concentre sur la gestion des versions et sur le cycle de vie des données : 
 >
 > - Gestion simplifiée de la découverte des équipements via API
+>
 > - Les indicateurs collectés sont découverts au fur et à mesure qu’ils sont remontés sans avoir besoin de les déclarer préalablement 
+>
 > - Garantir le bon fonctionnement d’une application via l’agrégat et la corrélation des points de surveillance 
+>
+>   
+>
+> RGM permet de répondre aux paradigmes suivants : 
+>
+> - Découverte des métriques au fil de l’eau. Les indicateurs collectés sont découverts au fur et à mesure qu’ils sont remontés sans avoir besoin de les déclarer. 
+> - Webisation des composants. De plus en plus de composants exposent une interface HTTP (IHM ou API). 
+> - Cycles de vie courts. Les indicateurs et les composants qui les portent ont des vies très courtes, liées notamment aux déploiements des conteneurs, aux redimensionnements des pools. Reconfigurer le monitoring doit se faire à chaud et très fréquemment. 
+> - Vision dynamique. Les systèmes de monitoring doivent avoir la capacité à s’intégrer avec des systèmes d’auto-découverte pour s’adapter en permanence aux évolutions de la topologie d’infrastructure. 
+> - Vision distribuée d’éléments constitués de plusieurs indicateurs. Avoir une vraie garantie du bon fonctionnement d’un service ne peut pas nécessairement se déterminer en regardant localement l’état d’une machine ou d’un processus. Il est parfois nécessaire d’agréger ou corréler des remontées de plusieurs machines. 
+>
+> 
+>
+> Des Tableaux de bord sont proposés et modulables pour l’ensemble des acteurs de la DSI : Techniques, Capacitifs, Applicatifs et Métiers… Cela permet de donner de la visibilité sur l’infrastructure « On-permise et Cloud ». 
+>
+> Les indicateurs tels que CPU, RAM, DISK vont permettre de gérer le « Capacity planning » et d’anticiper les incidents relatifs à la plateforme. Les ajouts de métriques permettent de mesurer la performance réseau.
+>
+> 
+>
+> **Services disponible dans la solution :**
+>
+> ![](C:\Users\samuel.ronciaux\Desktop\pics md blog docs\rgm_module.png)
+
+
+
