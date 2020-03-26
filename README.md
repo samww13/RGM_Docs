@@ -1,4 +1,4 @@
-#    *I.**      Description du document
+#    I.     Description du document
 
 ## **Objectif du document**
 
@@ -64,23 +64,22 @@ Des Tableaux de bord sont proposés et modulables pour l’ensemble des acteurs 
 
 Les indicateurs tels que CPU, RAM, DISK vont permettre de gérer le « Capacity planning » et d’anticiper les incidents relatifs à la plateforme. Les ajouts de métriques permettent de mesurer la performance réseau.
 
-
 **Composants disponibles dans la solution :**
 
 | Briques logiciels | Fonctionnalités                                              |
 | ----------------- | ------------------------------------------------------------ |
 | rgmweb            | Interface d'administration                                   |
 | thruk             | Interface de monitoring (Disponibilité)                      |
-| nagios            | Ordonnanceur  de cheks                                       |
+| nagios            | Ordonnanceur  de checks                                      |
 | nagvis            | Outil de  visualisation des données Nagios                   |
-| ged               | Bus  évenementiel                                            |
+| ged               | Bus  évènementiel                                            |
 | nagiosBP          | Outil de  modélisation des applications                      |
 | grafana           | Outil de  visualisation et de mise en forme de données métriques |
 | mk-livestatus     | Outil  d'accès au moteur Nagios sans accès disque            |
-| elasticsearch     | Outil  d'analyse et d'indéxation des données                 |
-| kibana            | Outil de  visaulisation des données Elasticsearch            |
-| beats-oss         | Agent  opensource de transfert pour les indicateurs          |
-| histou            | Outil  d'ajout de templates Grafana                          |
+| elasticsearch     | Outil  d'analyse et indexation des données                   |
+| kibana            | Outil de  visualisation des données Elasticsearch            |
+| beats-oss         | Agent  open source de transfert pour les indicateurs         |
+| histou            | Outil  d'ajout de Templates Grafana                          |
 | influxDB          | Base de  données Time series                                 |
 | mariaDB           | Base de  données MySQL                                       |
 | lilac             | Outil de  configuration graphique pour Nagios                |
@@ -91,9 +90,35 @@ Les indicateurs tels que CPU, RAM, DISK vont permettre de gérer le « Capacity 
 | ansible           | Outil de  management des configuration                       |
 | snmptt            | Outil de  capture et traduction des traps SNMP               |
 | mod_auth_rgm      | Module  d'authentification pour RGM                          |
-| nrpe              | Moteur  des agents Nagios pour execution de script locaux    |
+| nrpe              | Moteur des agents Nagios pour exécution des scripts locaux   |
 | mod_gearman       | Module  pour architecture RGM distribuée                     |
 | apache            | Serveur  Web                                                 |
 
+L’ensemble des services ne seront pas abordés dans ce document.
 
+**Rappel de compétences :**
+
+Sous RGM, l’utilisateur ayant tous les droits est appelé « rgm ». 
+
+Pour disposer de ses droits, il convient de se loguer en tant que « rgm » sur la machine.
+
+**Toutes les commandes** sont donc exécutées en « rgm » ou avec un utilisateur ayant ses droits. 
+
+ 
+
+Les principaux répertoires RGM sont : 
+
+/etc Contient les fichiers de configuration de bases 
+
+/srv/rgm Contient les fichiers relatifs à la solution RGM 
+
+/usr Contient les fichiers utilisateurs
+
+#    **III.**      Installation de la solution « RGM »
+
+Pour l'installation de la solution « RGM », se référer au chapitre d'installation.
+
+#    **IV.**      Accès à l'interface « RGMWEB »
+
+## 1. Accès à l'interface
 
