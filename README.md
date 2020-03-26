@@ -129,3 +129,15 @@ Pour accéder à l’interface web, il convient de saisir l’url du serveur web
 Le login par défaut pour accéder à l’interface est « admin:admin »
 
 ![](md_pics/screen_init_install.png)
+
+## 2. Présentation des menus
+
+La solution se décline sous 6 menus principaux :
+
+### a. Tableau de bord
+
+Le menu « Tableaux de bord » propose l’accès à différentes visualisations :  Vue synthétique du SI, Topologie réseau, Cartes Nagvis et performance Grafana.
+
+*Vue synthétique du SI*
+
+![](md_pics/vue_synthetique_RGM.png)
