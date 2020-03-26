@@ -68,7 +68,6 @@
 >
 > **Services disponible dans la solution :**
 >
-> ![](C:\Users\samuel.ronciaux\Desktop\pics md blog docs\rgm_module.png)
 
 
 
