@@ -1,14 +1,20 @@
 #    **I.**      **Description du document**
 
+
+
 > ## **Objectif du document**
 
 *Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de la solution d’Hypervision RGM.*
 
 > ## Destination du document
+>
+> 
 
 *Ce document s’adresse toutes personnes souhaitant utiliser la solution « RGM » pour superviser leurs infrastructures SI et métiers.*
 
 > ## Modification du document
+>
+> 
 
 | Date       | Révision | Propriétaire   | Résumé           |
 | ---------- | -------- | -------------- | ---------------- |
@@ -16,7 +22,11 @@
 
 
 
+
+
 #    **II.**      Qu’est-ce que « RGM »
+
+
 
 > La solution RGM a pour vocation de détecter les incidents, mais aussi de les anticiper pour éviter tout arrêt de service. 
 >
@@ -41,7 +51,7 @@
 >  
 >
 > RGM est agnostique et flexible. La solution se concentre sur la gestion des versions et sur le cycle de vie des données : 
-
-- Gestion simplifiée de la découverte des équipements via API 
-- Les indicateurs collectés sont découverts au fur et à mesure qu’ils sont remontés sans avoir besoin de les déclarer préalablement 
-- Garantir le bon fonctionnement d’une application via l’agrégat et la corrélation des points de surveillance 
+>
+> - Gestion simplifiée de la découverte des équipements via API
+> - Les indicateurs collectés sont découverts au fur et à mesure qu’ils sont remontés sans avoir besoin de les déclarer préalablement 
+> - Garantir le bon fonctionnement d’une application via l’agrégat et la corrélation des points de surveillance 
