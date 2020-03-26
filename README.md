@@ -151,3 +151,29 @@ Sur le tableau de bord, il y a 4 types de diagrammes, circulaires et en barre :
 *Topologie réseau*
 
 ![](md_pics/topologie_RGM.png)
+
+Cette cartographie permet une visualisation circulaire ou tabulaire avec divers regroupements (équipements, services, adresses IP…).
+
+*Cartes Nagvis*
+
+![](md_pics/screen_Nagvis_1.png)
+
+Les cartes Nagvis, souples et modulables, permettent de générer des vues métiers issus de la supervision.
+
+*Performance - Grafana* 
+
+![](md_pics/dashboard_grafana_vmware.png)
+
+Grafana permet de générer des tableaux de bord sur la base de métriques et données temporelles. Il est orienté « data visualisation ».
+
+### b. Disponibilités
+
+*Problèmes*
+
+![](md_pics/screen_dispo1.png)
+
+La vue Problèmes permet de visualiser les pannes en cours. Cette vue se décompose en deux sous-menus « Incidents équipements » et « Incidents services » pour une meilleure visualisation.
+
+*Incident équipements*
+
+![](md_pics/incident_assets.png)
