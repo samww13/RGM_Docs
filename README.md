@@ -1,28 +1,18 @@
-#    **I.**      **Description du document**
-
-
+#    **I.**      Description du document
 
 > ## **Objectif du document**
 
 *Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de la solution d’Hypervision RGM.*
 
 > ## Destination du document
->
-> 
 
 *Ce document s’adresse toutes personnes souhaitant utiliser la solution « RGM » pour superviser leurs infrastructures SI et métiers.*
 
 > ## Modification du document
->
-> 
 
 | Date       | Révision | Propriétaire   | Résumé           |
 | ---------- | -------- | -------------- | ---------------- |
 | 26/03/2020 | V0R1     | Communauté RGM | Version initiale |
-
-
-
-
 
 #    **II.**      Qu’est-ce que « RGM »
 
