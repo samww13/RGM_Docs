@@ -141,3 +141,13 @@ Le menu « Tableaux de bord » propose l’accès à différentes visualisations
 *Vue synthétique du SI*
 
 ![](md_pics/vue_synthetique_RGM.png)
+
+Sur le tableau de bord, il y a 4 types de diagrammes, circulaires et en barre : 
+
+- Celui en haut à gauche représente l’état des équipements « UP/DOWN »
+- Celui en haut à droite symbolise les services « CRITICAL/WARNING/UNKNOWN et PENDING » 
+- Les 2 graphiques en bas proposent les messages d’erreurs en cours, dénommés « évènements actifs » selon leurs niveaux de criticité.
+
+*Topologie réseau*
+
+![](md_pics/topologie_RGM.png)
