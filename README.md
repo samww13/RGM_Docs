@@ -1,4 +1,4 @@
-#    **I.**      Description du document
+#    *I.**      Description du document
 
 ## **Objectif du document**
 
@@ -63,11 +63,37 @@ RGM permet de répondre aux paradigmes suivants :
 Des Tableaux de bord sont proposés et modulables pour l’ensemble des acteurs de la DSI : Techniques, Capacitifs, Applicatifs et Métiers… Cela permet de donner de la visibilité sur l’infrastructure « On-permise et Cloud ». 
 
 Les indicateurs tels que CPU, RAM, DISK vont permettre de gérer le « Capacity planning » et d’anticiper les incidents relatifs à la plateforme. Les ajouts de métriques permettent de mesurer la performance réseau.
-  
+
 
 **Composants disponibles dans la solution :**
 
-![liste des composants](md_pics/rgm_module.png)
+| Briques logiciels | Fonctionnalités                                              |
+| ----------------- | ------------------------------------------------------------ |
+| rgmweb            | Interface d'administration                                   |
+| thruk             | Interface de monitoring (Disponibilité)                      |
+| nagios            | Ordonnanceur  de cheks                                       |
+| nagvis            | Outil de  visualisation des données Nagios                   |
+| ged               | Bus  évenementiel                                            |
+| nagiosBP          | Outil de  modélisation des applications                      |
+| grafana           | Outil de  visualisation et de mise en forme de données métriques |
+| mk-livestatus     | Outil  d'accès au moteur Nagios sans accès disque            |
+| elasticsearch     | Outil  d'analyse et d'indéxation des données                 |
+| kibana            | Outil de  visaulisation des données Elasticsearch            |
+| beats-oss         | Agent  opensource de transfert pour les indicateurs          |
+| histou            | Outil  d'ajout de templates Grafana                          |
+| influxDB          | Base de  données Time series                                 |
+| mariaDB           | Base de  données MySQL                                       |
+| lilac             | Outil de  configuration graphique pour Nagios                |
+| nagflux           | Connecteur  de données de performance                        |
+| notifier          | Module  de notifications avancées                            |
+| nrdp              | Protocole  de transport pour les données Nagios              |
+| rgmapi            | API RGM                                                      |
+| ansible           | Outil de  management des configuration                       |
+| snmptt            | Outil de  capture et traduction des traps SNMP               |
+| mod_auth_rgm      | Module  d'authentification pour RGM                          |
+| nrpe              | Moteur  des agents Nagios pour execution de script locaux    |
+| mod_gearman       | Module  pour architecture RGM distribuée                     |
+| apache            | Serveur  Web                                                 |
 
 
 
