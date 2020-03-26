@@ -66,8 +66,9 @@
 >
 > 
 >
-> **Services disponible dans la solution :**
+> **Composants disponibles dans la solution :**
 >
+> ![](.\md_pics\rgm_module.png)
 
 
 
