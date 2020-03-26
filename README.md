@@ -177,3 +177,92 @@ La vue Problèmes permet de visualiser les pannes en cours. Cette vue se décomp
 *Incident équipements*
 
 ![](md_pics/incident_assets.png)
+
+*Incident services*
+
+![](md_pics/incident_services.png)
+
+*Groupes d’équipements*
+
+![](md_pics/groupe_equipements.png)
+
+La vue « Groupes d’équipements » permet de trier et classer les équipements par technologie, type ou modèle. Ces regroupements sont utilisés notamment pour limiter les vues de certains utilisateurs. 
+
+*Groupes de services*
+
+La vue « Groupe de services » est similaire à la précédente, et permet également de limiter les vues utilisateurs à certains services spécifiques.
+
+*Évènements*
+
+La vue « Evènements » permet la visualisation des événements actifs et résolus.
+
+Affichage des évènements en cours avec l’état et le descriptif associé. 
+
+![](md_pics/ged_events_1.png)
+
+Il est possible d’interagir sur les événements via la prise en compte ou l’acquittement par exemple et d’afficher plus de détails.
+
+![](md_pics/ged_events2.png)
+
+*Applications*
+
+![](md_pics/application_view.png)
+
+La vue Application fournit un résumé des vues métiers disponibles et du service rendu à l’utilisateur final.
+
+![](md_pics/application_view2.png)
+
+L’icône « Tree » permet de visualiser l’ensemble des services qui sont utilisés pour modéliser l’application. 
+
+### c. Capacité
+
+*Performance*
+
+![](md_pics/capacity_perf.png)
+
+Ce menu permet la visualisation graphique des services par équipements sur une période donnée.
+
+### d. Production
+
+*Arrêts planifiés/récurrents*
+
+![](md_pics/downtime1.png)
+
+Ce menu permet de suspendre temporairement la supervision sur un ou plusieurs équipements et ces services sur une période donnée. 
+
+Il également possible de définir des plages de maintenance récurrentes dans le cadre de campagnes de mises à jour par exemple.
+
+### e. Rapports
+
+*Génération de rapports*
+
+![](md_pics/report1.png)
+
+Ce menu permet de générer automatiquement des rapports de disponibilité des équipements et des services. L’envoi des rapports par mail est possible sous réserve d’une configuration préalable.
+
+Il peuvent être également consultés immédiatement en HTML ou PDF.
+
+![](md_pics/report2.png)
+
+*Évènements*
+
+![](md_pics/events_report.png)
+
+Le sous-menu « Evènements » permet de visualiser les volumes d’incidents sur une période donnée et SLA technique avec les temps moyens de résolution.
+
+*Disponibilité*
+
+![](md_pics/dispo_report.png)
+
+Le menu disponibilité permet de générer à la volée des rapports de disponibilité, tendances et résumés sur une période donnée sur différents critères (groupe d’équipements, services…).
+
+### f. Administration
+
+Ce menu permet la configuration complète de la solution RGM, il sera donc détaillé plus en profondeur dans le chapitre suivant « Paramétrage de la solution ».
+
+#    V.      Paramétrage de la solution « RGM »
+
+**L’Appliance** **RGM** est construite autour d’une pile Automation/Elastic/Nagios/Grafana et un ensemble de composants pour répondre aux besoins d’Hypervision. 
+
+## 1. Configuration des surveillances - Paramètres
+
