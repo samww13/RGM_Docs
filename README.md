@@ -128,4 +128,4 @@ Pour accéder à l’interface web, il convient de saisir l’url du serveur web
 
 Le login par défaut pour accéder à l’interface est « admin:admin »
 
-![](md_pics\screen_init_install.png)
+![](md_pics/screen_init_install.png)
