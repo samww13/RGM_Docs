@@ -63,9 +63,8 @@ RGM permet de répondre aux paradigmes suivants :
 Des Tableaux de bord sont proposés et modulables pour l’ensemble des acteurs de la DSI : Techniques, Capacitifs, Applicatifs et Métiers… Cela permet de donner de la visibilité sur l’infrastructure « On-permise et Cloud ». 
 
 Les indicateurs tels que CPU, RAM, DISK vont permettre de gérer le « Capacity planning » et d’anticiper les incidents relatifs à la plateforme. Les ajouts de métriques permettent de mesurer la performance réseau.
-
-
-
+  
+  
 **Composants disponibles dans la solution :**
 
 ![](.\md_pics\rgm_module.png)
