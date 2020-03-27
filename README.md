@@ -584,4 +584,245 @@ La modélisation d’une application permet d’obtenir un statut unique d’un 
 
 Plusieurs niveaux de « Display » de modélisation sont disponibles (0 à 5). Le niveau 0 étant réservé pour la modélisation de bas niveau.
 
-![](md_pics/add_asset1.png)
+![](md_pics/bp_app1.png)
+
+Pour modéliser une application, depuis le menu « Administration – Applications ».
+
+Cliquez ensuite sur « Ajouter une nouvelle application » pour créer une nouvelle modélisation.
+
+![](md_pics/bp_app2.png)
+
+Il faut donc dans un premier temps créer les applications de « niveau 0 », sans visibilité dans l’interface de disponibilité. Cela représente l’agrégat de service au niveau le plus bas d’un équipement.
+
+Tous les équipements doivent donc être modélisés unitairement avec leurs services critiques sous la forme « SERVEUR_BP0 » par exemple.
+
+![](md_pics/bp_app3.png)
+
+Il est également important de choisir le connecteur logique à utiliser (ET, OU, MIN OF), ils vont permettre l’association des services en fonction de différents critères, par exemple :
+
+- On utilisera un « ET » pour associer au moins 2 services indispensables sur une machine
+- On utilisera un « OU » pour modéliser un équipement en HA avec 2 machines
+- On utilisera un « MIN OF » pour modéliser un cluster de plusieurs nœuds
+
+**NB** : **Les agrégats de points de contrôles de niveau 0 seront obligatoirement avec un connecteur logique de type « ET ».**
+
+On recherche l’équipement à modéliser depuis la barre de recherche « Equipement ». Puis on lie les services ensemble via un « glisser-déposer ».
+
+![](md_pics/bp_app4.png)
+
+Puis cliquez sur « Appliquer ».
+
+ 
+
+Désormais, les éléments modélisés qui vont suivre peuvent apparaitre visibles dans l’interface. À ce stade ils deviennent pertinents pour le monitoring applicatif, ils peuvent donc avoir un niveau de display entre « 1 et 5 ».
+
+![](md_pics/bp_app5.png)
+
+À ce stade, on regroupe donc des éléments de « display 0 » pour avoir une modélisation de niveau 1 ou supérieure.
+
+![](md_pics/bp_app6.png)
+
+On peut désormais ajouter autant de niveaux que l’on souhaite pour modéliser l’application jusqu’au point de contrôle unique qui définit le bon fonctionnement d’une application.
+
+![](md_pics/bp_app7.png)
+
+Lorsque l’application est modélisée, il faut « appliquer la configuration ».
+
+![](md_pics/bp_app8.png)
+
+L’application est désormais visible depuis le menu « Disponibilité – Applications – Vue applications ».
+
+![](md_pics/bp_app9.png)
+
+## 6. Inscription automatisée
+
+Ce menu permet de déployer les agents pour RGM sur les équipements clients et d’obtenir les remontées de métriques immédiatement dans les différents lacs de données que propose RGM (Elasticsearch et Prometheus) et ensuite les ajouter dans l’interface de RGM.
+
+Pour effectuer l’action de déploiement d’un agent, se rendre dans le menu « Administration – Inscription automatisée ». 
+
+Sélectionnez le type de "Host" que vous souhaitez déployer (Linux, Windows...) et le type d'agent désiré (metricbeat, winlogbeat, prometheus...)
+
+![](md_pics/inscript_auto_1.png)
+
+Une fois l'agent sélectionné, copiez la commande d’exécution affichée en bas de la page, et exécutez celle-ci sur votre serveur à superviser. L’installation et la configuration de l’agent se font de manière automatique.
+
+![](md_pics/inscript_auto_2.png)
+
+Vous pouvez désormais vérifier le bon fonctionnement de l'agent après installation via les commandes "status" des différents systèmes.
+
+![](md_pics/inscript_auto_3.png)
+
+## 7. Déploiement CSV
+
+Ce menu permet d’injecter plusieurs équipements en masse via des fichiers « .csv ». Pour cela :
+
+- Utiliser, ou créer auparavant sous l’interface Web les Templates en fonction de vos besoins avec des commandes et services prédéfinis.
+- Remplir le fichier « .csv » avec les champs suivants : Nom d’Hote ; Adresse IP ; Description ; Nom du/des Template(s) choisi.
+
+![](md_pics/deploy_csv1.png)
+
+![](md_pics/deploy_csv2.png)
+
+**N.B** **: Lorsque l’import est fini, les équipements sont visibles depuis l’interface de configuration, mais il faut exporter la nouvelle configuration pour finaliser l’opération.**
+
+## 8. Notifications avancées
+
+Le module de notifications avancées permet d’envoyer des mails ciblés en suivant les workflows habituels.
+
+Les règles classiques de notifications sont définies par défaut sur du 24x7 pour les équipements et les services.
+
+![](md_pics/notifier1.png)
+
+### a. Règles
+
+Pour Lister/Créer une nouvelle règle de notification sur des équipements et/ou des services, cliquez sur le bouton « Règles ».
+
+**N.B** **: La règle la plus en haut du tableau est la règle prioritaire (de niveau 0).** 
+
+Pour changer l’ordre de priorité, il vous suffit de cliquer sur les boutons « UP et DOWN ».
+
+![](md_pics/notifier2.png)
+
+Puis renseigner l’ensemble des champs nécessaires :
+
+Les champs : Nom, période de notification et méthodes de notification sont obligatoires dans ce formulaire. Tout champ non obligatoire n’étant pas rempli prendra la valeur «-».
+
+![](md_pics/notifier3.png)
+
+- Dans le champ « Nom », on nomme la règle
+- Le type est défini automatiquement en fonction du type de règle choisi sur la page index (Host ou Service)
+- Le champ « Niveau de débogage » permet de définir le niveau de debug de la règle pour effectuer des tests
+- Le champ « Contacts » permet l’ajout de contacts ou des groupes de contacts provenant de la base RGM, qui vous seront proposés automatiquement lors de la saisie. Il est malgré tout possible d’ajouter une valeur n’existant pas dans la base.
+- L’ajout de Hosts ou des groupes de Hosts provenant de la base RGM vous seront proposés lors de la saisie. Il est malgré tout possible d’ajouter une valeur n’existant pas dans la base.
+- Le champ « Etat » permet de sélectionner les différents états sur lesquels on souhaite être notifié
+- Le champ « Nombre de notifications » permet de définir le nombre notifications passées avant émission
+- L’ajout d’une période de notification, celles déjà créées vous seront proposées lors de la saisie
+- La « Méthode de notification » permet l’ajout d’une ou plusieurs méthodes, à partir de celle proposée lors de la saisie (mail, SMS, Slack, Teams…)
+
+ 
+
+**N.B** **: La création de règles sur les services comportera des champs supplémentaires liés aux services ou groupes de services cibles et aux statuts (WARNING, CRITICAL…).**
+
+### b. Périodes
+
+Pour Lister/Créer une nouvelle période de notification, Cliquez sur le bouton « Périodes » du menu supérieur.
+
+![](md_pics/notif_period1.png)
+
+- Dans ce formulaire, l’unique champ obligatoire est le « Nom de la période de notification ». 
+- Le Second champ permet de définir les jours de notification de votre période. 
+- Le lien « All / None » permet de tout sélectionner ou désélectionner rapidement. 
+- Enfin le dernier champ « Heure de notification » permet de définir les heures de début et de fin des périodes de notification. 
+
+Pour ajouter des périodes, sélectionner à l’aide des différents menus déroulants le début et la fin de la période. 
+
+Une fois ceci réalisé, cliquez sur le bouton « Add » pour l’ajouter. 
+
+Le bouton « Delete », permet de supprimer la période sélectionnée. On peut remarquer un bouton « All » à droite des listes déroulantes. Ce bouton permet de définir la période en 24/24. Une petite étoile s’ajoutera alors à la liste. 
+
+### c. Méthodes
+
+Pour Lister/Créer une nouvelle méthode de notification, Cliquez sur le bouton « Méthodes » du menu supérieur.
+
+![](md_pics/notif_method1.png)
+
+Pour ajouter une méthode de notification, il faut sélectionner « Ajouter une méthode d’équipement» et/ou « Ajouter une méthode de service» en fonction du besoin.
+
+![](md_pics/notif_method2.png)
+
+- Dans ce formulaire, les champs obligatoires sont la Nom de la méthode et la ligne de commande. 
+- Le Second champ est défini automatiquement en fonction du type de méthode utilisée (Service ou Host). 
+
+### d. Outils
+
+Le menu « Outils » permet également plusieurs actions.
+
+![](md_pics/outils1.png)
+
+- La configuration générale du notifier avec l’activation du débogage et les chemins des fichiers de logs.
+
+![](md_pics/outils2.png)
+
+- La gestion des contacts
+
+![](md_pics/outils3.png)
+
+Pour désactiver un contact des règles de notifications, il faut se rendre dans ce formulaire, l’unique champ obligatoire est le Nom du contact . 
+
+Le Second champ permet de définir le niveau de débogage. Une fois les champs modifiés, cliquez sur le bouton « Ajouter ».
+
+- Appliquer la configuration
+
+Pour appliquer la configuration et enregistrer les modifications effectuées sur le notifier, il suffit de cliquer sur le bouton « Outils » du menu supérieur puis sur le bouton « Appliquer la configuration » du sous-menu. 
+
+Une fois l’opération réalisée, les deux zones de texte correspondent aux nouveaux fichiers de configuration des notifications.
+
+![](md_pics/outils4.png)
+
+## 9. Rapports de Configuration
+
+Les rapports de configuration permettent d’obtenir un état rapide sur les Equipements, les Templates associés, les Hosts et Service Groups… et leur configuration au sein de RGM.
+
+Voici un exemple de rapport sur les Templates avec leurs commandes associées.
+
+![](md_pics/config_report.png)
+
+## 10. Performances d’exécutions
+
+Ce menu permet d’obtenir un état global de l’exécution des services et commandes. 
+
+![](md_pics/exec_perf.png)
+
+## 11. Appliquer la configuration
+
+Ce menu permet d’appliquer l’ensemble des modifications opérées au travers de l’interface d’administration. 
+
+**N.B** **: La configuration doit être appliquée après chaque modification ou configuration.**
+
+![](md_pics/apply_config21.png)
+
+Chaque changement ou modification est enregistré dans des fichiers temporaires, mais n’est appliqué que lorsque l’export de configuration est lancé.
+
+Deux jobs d’export sont disponibles : « Complet » et « Incrémental ». 
+
+À choisir en fonction du nombre de changements opérés et de l’impact sur les performances du moteur Nagios.
+
+Pour lancer le job d’export, cliquez sur « Restart ».
+
+![](md_pics/apply_config22.png)
+
+Dès que le job d’export est terminé, vérifier son statut qui doit être « Succeded ».
+
+![](md_pics/apply_config23.png)
+
+En cas d’échec, vous pouvez consulter les logs disponibles sous le résultat pour identifier l’erreur de configuration.
+
+![](md_pics/apply_config24.png)
+
+On constate ici une erreur sur les valeurs de « max_check_attemps ». Ces valeurs sont définies par défaut via le Template « Generic Host » à minima. Celui-ci ne doit donc pas être affecté à l’équipement.
+
+![](md_pics/apply_config25.png)
+
+## 12. Gestion des comptes
+
+### a. Authentification
+
+Ce menu permet de configurer une authentification LDAP ou Active Directory pour l’accès à l’interface Web de RGM.
+
+![](md_pics/authent1.png)
+
+Pour configurer l’authentification :
+
+- Sélectionnez « LDAP Backend », puis entrez le nom ou l’IP du serveur.
+- Entrez le port d’écoute LDAP.
+- La recherche DN de type DC=XXXXX,DC=XXXX qui correspond à la racine.
+- Les filtres utilisateurs et groupes à utiliser pour limiter le nombre d’utilisateurs remontés par la recherche.
+- Le DN du compte qui sera utilisé pour effectuer l’interrogation du LDAP avec le chemin complet de sa position, ainsi que son mot de passe. 
+- Le login RDN à spécifier pour effectuer une connexion LDAP ou Active Directory.
+
+Lorsque les champs sont correctement renseignés, on clique sur « Modifier » pour lancer la recherche des comptes.
+
+![](md_pics/authent2.png)
+
+### b. Groupes
+
