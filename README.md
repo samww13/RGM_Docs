@@ -838,3 +838,92 @@ Pour ajouter un nouveau groupe, sélectionnez « Ajouter Groupe » et cliquez su
 - Puis on attribue les droits d’accès aux différents menus RGM suivant les besoins, et on clique sur « Ajouter ».
 
 ![](md_pics/authent4.png)
+
+### c. Utilisateurs
+
+Ce menu permet la gestion des utilisateurs dans RGM.
+
+![](md_pics/authent5.png)
+
+Pour ajouter un nouvel utilisateur, sélectionnez « Ajouter utilisateur » et cliquez sur « Envoyer ».
+
+- On définit le nom de l’utilisateur ou effectue directement une recherche sur le DN du compte en cochant « Utilisateur LDAP ».
+- On renseigne l’email de l’utilisateur.
+- On peut également préciser une description.
+- Le mot de passe du compte LDAP est automatiquement ou l’on renseigne celui-ci si notre utilisateur est créé sur la base RGM directement.
+- On peut également choisir la langue par défaut de l’interface pour l’utilisateur.
+- On renseigne le groupe que l’on souhaite attribuer à l’utilisateur.
+- On peut choisir un niveau d’accès à Nagvis.
+- Il est possible de limiter le compte.
+
+![](md_pics/authent6.png)
+
+### d. Processus
+
+Ce menu permet de visualiser l’état et d’interagir sur les principaux composants systèmes de la solution RGM.
+
+![](md_pics/processus1.png)
+
+### e. Journaux
+
+Ce menu permet de visualiser les logs de différentes actions effectuées sur la plateforme. Il est possible d’appliquer plusieurs critères de recherche comme la période par exemple.
+
+![](md_pics/journaux1.png)
+
+# 13. Tableaux de bord et cartes
+
+### a. Cartes
+
+Le menu « Cartes » permet un accès à l’interface de « Nagvis ». Différents modes de création de cartes avec « Nagvis » sont possibles. Nous détaillerons ici la création avec fond de cartes.
+
+![](md_pics/nagvis1.png)
+
+La première étape est d’ajouter un « background », c’est un fond de carte au format « .png ». 
+
+On télécharge l’image via « Upload Background Image ».
+
+![](md_pics/nagvis2.png)
+
+Une fois le background disponible, on peut créer la nouvelle carte via le menu « Manage Maps ».
+
+![](md_pics/nagvis3.png)
+
+![](md_pics/nagvis4.png)
+
+On insère ensuite notre fond de carte précédemment importé en tant que « background ».
+
+Il est possible de choisir différents types de cartes.
+
+Maintenant que le fond de carte est disponible, nous nous pouvons ajouter les points de contrôle temps réel via le menu « Edit Map – Add Icon».
+
+Il est possible d’ajouter différents types d’objets (Host, Service…) et de choisir les tailles d’icônes.
+
+![](md_pics/nagvis5.png)
+
+Puis cliquez sur « Save » pour insérer l’icône dans le fond de carte.
+
+![](md_pics/nagvis6.png)
+
+Voici le résultat final, une fois les points de contrôle positionné.
+
+![](C:\git\RGM_Docs\md_pics\nagvis7.png)
+
+### b. Kibana
+
+Ce menu permet d’accéder à l’interface de visualisation des données du produit « Elasicsearch », utilisé pour les remontées des métriques via les agents.
+
+Pour une documentation complète sur l’utilisation de « Kibana » se référer à la page suivante :
+
+https://www.elastic.co/guide/en/kibana/7.6/index.html
+
+![](md_pics/kibana1.png)
+
+### c. Grafana
+
+Ce menu permet l’accès à la configuration de « Grafana » et la création de tableaux de bord personnalisé.
+
+![](md_pics/grafana1.png)
+
+Pour une documentation complète sur l’utilisation de « Grafana » se référer à la page suivante :
+
+https://grafana.com/docs/grafana/latest/
