@@ -460,19 +460,14 @@ Par défaut « Generic Host » sera utilisé, car il permet de définir une conf
 
 Désormais, on peut créer les services associés au Template depuis l’onglet « Services ».
 
- 
+- Saisir le Nom et la description. Puis utiliser « Generic Graph » ou « Generic Service » en fonction du résultat de la commande associée (si celle-ci permet de remonter des données de performance qui pourront être mises en forme par Grafana.
 
-Saisir le Nom et la description. Puis utiliser « Generic Graph » ou « Generic Service » en fonction du résultat de la commande associée (si celle-ci permet de remonter des données de performance qui pourront être mises en forme par Grafana.
+- Sélectionner la commande à associer au service en cochant « Provide value » pour accéder au menu déroulant des commandes.
 
- 
+- Ajuster les paramètres en fonction de la commande utilisée (voir les arguments définis dans la commande).
 
-Sélectionner la commande à associer au service en cochant « Provide value » pour accéder au menu déroulant des commandes.
+- Puis cliquez sur « Add Service ».
 
- 
-
-Ajuster les paramètres en fonction de la commande utilisée (voir les arguments définis dans la commande).
-
-Puis cliquez sur « Add Service ».
 
 ![](md_pics/add_model5.png)
 
@@ -548,7 +543,7 @@ Ce menu permet d’appliquer l’ensemble des modifications opérées au travers
 
 **N.B** **: La configuration doit être appliquée après chaque modification ou configuration.**
 
-![](C:\git\RGM_Docs\md_pics\apply_config2.png)
+![](md_pics/apply_config2.png)
 
 Chaque changement ou modification est enregistré dans des fichiers temporaires, mais n’est appliqué que lorsque l’export de configuration est lancé.
 
