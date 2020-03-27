@@ -1,3 +1,5 @@
+![](md_pics/logo_RGM_Website.png)
+
 #    I.     Description du document
 
 ## **Objectif du document**
@@ -579,3 +581,7 @@ On constate ici une erreur sur les valeurs de « max_check_attemps ». Ces valeu
 La modélisation d’une application permet d’obtenir un statut unique d’un agrégat de point de contrôle sous-jacent.
 
 ![](md_pics/nagiosBP_architecture.png)
+
+Plusieurs niveaux de « Display » de modélisation sont disponibles (0 à 5). Le niveau 0 étant réservé pour la modélisation de bas niveau.
+
+![](md_pics/add_asset1.png)
