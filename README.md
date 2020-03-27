@@ -826,3 +826,15 @@ Lorsque les champs sont correctement renseignés, on clique sur « Modifier » p
 
 ### b. Groupes
 
+Ce menu permet la gestion des groupes d’utilisateurs dans RGM.
+
+![](md_pics/authent3.png)
+
+Pour ajouter un nouveau groupe, sélectionnez « Ajouter Groupe » et cliquez sur « Envoyer ».
+
+- On définit le nom du groupe.
+- Le groupe peut être issu d’un groupe LDAP existant ou interne à RGM.
+- On peut également préciser une description.
+- Puis on attribue les droits d’accès aux différents menus RGM suivant les besoins, et on clique sur « Ajouter ».
+
+![](md_pics/authent4.png)
