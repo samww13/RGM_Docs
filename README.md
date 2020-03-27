@@ -72,6 +72,28 @@
 
 <br>
 
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
 #    II.      Qu’est-ce que « RGM »
 
 
@@ -172,9 +194,27 @@ Les principaux répertoires RGM sont :
 
 /usr Contient les fichiers utilisateurs
 
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
 #    **III.**      Installation de la solution « RGM »
 
 Pour l'installation de la solution « RGM », se référer au chapitre d'installation.
+
+<br>
+
+<br>
+
+<br>
 
 #    **IV.**      Accès à l'interface « RGMWEB »
 
@@ -317,6 +357,64 @@ Le menu disponibilité permet de générer à la volée des rapports de disponib
 ### f. Administration
 
 Ce menu permet la configuration complète de la solution RGM, il sera donc détaillé plus en profondeur dans le chapitre suivant « Paramétrage de la solution ».
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
 
 #    V.      Paramétrage de la solution « RGM »
 
@@ -921,7 +1019,7 @@ Ce menu permet de visualiser les logs de différentes actions effectuées sur la
 
 ![](md_pics/journaux1.png)
 
-# 13. Tableaux de bord et cartes
+## 13. Tableaux de bord et cartes
 
 ### a. Cartes
 
