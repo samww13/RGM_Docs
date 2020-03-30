@@ -438,7 +438,7 @@ Les valeurs par défaut sont optimales pour une utilisation classique de la solu
 
 ### c. Nagios Ressources
 
-![](md_pics/nagios_ressources.png)
+![](C:\git\RGM_Docs\md_pics\nagios_ressources.png)
 
 Ce menu permet de paramétrer un ensemble de variables d’environnement, appelé « Ressources », nécessaires à l’exécution des points de contrôles. Par exemple :
 
