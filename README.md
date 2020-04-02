@@ -16,7 +16,7 @@
 
 
 
-#    <summary>I.     Description du document</summary><details>
+#    <details><summary>I.     Description du document</summary>
 
 ## **Objectif du document**
 
