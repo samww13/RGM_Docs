@@ -16,9 +16,9 @@
 
 #    I.     Description du document
 
-## <summary>Objectif du document</summary> 
+## <summary><details>Objectif du document</summary> 
 
-Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de la solution d’Hypervision RGM.
+Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de la solution d’Hypervision RGM.</details>
 
 ## Destination du document
 
