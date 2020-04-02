@@ -16,11 +16,11 @@
 
 #    I.     Description du document
 
-## <details><summary>Objectif du document</summary><blockquote>
+## <details><summary>Objectif du document</summary>
 
 Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de la solution d’Hypervision RGM.
 
-</blockquote></details>
+</details>
 
 ## Destination du document
 
