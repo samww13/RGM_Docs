@@ -14,11 +14,13 @@
 
 <br>
 
+#    I.     Description du document
 
+<details>
 
-#    <details><summary>I.     Description du document</summary>
+<summary> Afficher</summary>
 
-## **Objectif du document**
+## Objectif du document
 
 *Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de la solution d’Hypervision RGM.*
 
