@@ -18,7 +18,7 @@
 
 ## <details> <summary>Objectif du document 
 
-Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de la solution d’Hypervision RGM. </summary><details>
+Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de la solution d’Hypervision RGM. </summary><blockquote><details>
 
 ## Destination du document
 
