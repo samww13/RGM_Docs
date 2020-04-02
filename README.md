@@ -16,7 +16,7 @@
 
 #    I.     Description du document
 
-<details>
+<Objectifs>
 
 ## <summary> Objectif du document </summary>
 
@@ -96,7 +96,7 @@ Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de
 
 <br>
 
-</details>
+</objectifs>
 
 #    II.      Qu’est-ce que « RGM »
 
