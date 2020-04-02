@@ -14,7 +14,9 @@
 
 <br>
 
-#    I.     Description du document
+<details>
+
+#    <summary>I.     Description du document</summary>
 
 ## **Objectif du document**
 
@@ -29,6 +31,8 @@
 | Date       | Révision | Propriétaire   | Résumé           |
 | ---------- | -------- | -------------- | ---------------- |
 | 26/03/2020 | V0R1     | Communauté RGM | Version initiale |
+
+</details>
 
 <br>
 
