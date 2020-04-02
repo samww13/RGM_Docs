@@ -96,8 +96,6 @@ Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de
 
 #    II.      Qu’est-ce que « RGM »
 
-
-
 La solution RGM a pour vocation de détecter les incidents, mais aussi de les anticiper pour éviter tout arrêt de service. 
 
  
@@ -183,8 +181,6 @@ Sous RGM, l’utilisateur ayant tous les droits est appelé « rgm ».
 Pour disposer de ses droits, il convient de se loguer en tant que « rgm » sur la machine.
 
 **Toutes les commandes** sont donc exécutées en « rgm » ou avec un utilisateur ayant ses droits. 
-
- 
 
 Les principaux répertoires RGM sont : 
 
