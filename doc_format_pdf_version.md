@@ -1,19 +1,3 @@
-![](md_pics/logo_RGM_Website.png)
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
 #    I.     Description du document
 
 ## Objectif du document
@@ -32,71 +16,9 @@ Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de
 
 <br>
 
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
 #    II.      Qu’est-ce que « RGM »
 
-
+<details><summary>...</summary>
 
 La solution RGM a pour vocation de détecter les incidents, mais aussi de les anticiper pour éviter tout arrêt de service. 
 
@@ -193,6 +115,8 @@ Les principaux répertoires RGM sont :
 /srv/rgm Contient les fichiers relatifs à la solution RGM 
 
 /usr Contient les fichiers utilisateurs
+
+</details>
 
 <br>
 
