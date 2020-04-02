@@ -18,11 +18,11 @@
 
 <details>
 
-<summary> Afficher</summary>
-
-## Objectif du document
+## <summary> <Objectif du document </summary>
 
 *Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de la solution d’Hypervision RGM.*
+
+</details>
 
 ## Destination du document
 
@@ -33,8 +33,6 @@
 | Date       | Révision | Propriétaire   | Résumé           |
 | ---------- | -------- | -------------- | ---------------- |
 | 26/03/2020 | V0R1     | Communauté RGM | Version initiale |
-
-</details>
 
 <br>
 
