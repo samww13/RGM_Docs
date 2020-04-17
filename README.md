@@ -26,11 +26,10 @@ Ce document permet aux administrateurs Système et Réseaux la mise en œuvre de
 
 ## Modification du document
 
-| Date       | Révision | Propriétaire   | Résumé           |
-| ---------- | -------- | -------------- | ---------------- |
-| 26/03/2020 | V0R1     | Communauté RGM | Version initiale |
-
-<br>
+| Date       | Révision | Propriétaire   | Résumé               |
+| ---------- | -------- | -------------- | -------------------- |
+| 26/03/2020 | V0R1     | Communauté RGM | Version initiale     |
+| 26/04/2020 | V0R11    | Communauté RGM | Ajout section APIRGM |
 
 <br>
 
