@@ -1148,3 +1148,177 @@ Voci la liste des actions ("API_function") possibles avec « RGMAPI » :
 | `addContactGroupToHostTemplate` | POST         | [**contactGroupName, templateHostName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Add a contact group to a nagios host template.               |
 | `exportConfiguration`           | POST         | [**jobName**]                                                | "http_code": "200 OK", "result": [with the executed actions] | Export Nagios Configuration.                                 |
 | `getHostByAddress`              | POST         | [**hostAddress**]                                            | "http_code": "200 OK", "result": [List of host with Address] | Return a list.                                               |
+
+### c. Exemple d'appels API
+
+Pour illustrer l'ensemble des fonctionnalités de l'API RGM, vous trouverez quelques exemples d'implémentation (avec retour JSON) :
+
+* /createHost
+```json 
+{
+	"templateHostName": "TEMPLATE_HOST",
+	"hostName": "HostName",
+	"hostIp": "8.8.8.8",
+	"hostAlias": "My first host",
+	"contactName": "usertest",
+	"contactGroupName": null,
+	"exportConfiguration": true
+}
+```
+
+* /createService
+```json 
+{
+	"hostName": "HostName",
+	"services": {
+                "Service1": [
+                    "TEMPLATE_SERVICE_1",
+                    "127.0.0.1",
+                    "eth0",
+                    "1000000",
+                    "100",
+                    "110"
+                ],
+                "Service2": [
+                    "TEMPLATE_SERVICE_2",
+                    "3000",
+                    "80",
+                    "5000",
+                    "90"
+                ]
+        },
+	"exportConfiguration": true
+}
+
+```
+
+* /createUser
+```json 
+{
+	"userName": "bob",
+	"userMail": "bob@marley.com",
+	"admin": true,
+	"filterName": "hostgroups",
+	"filterValue": "HOSTGROUP_JAMAICA",
+	"exportConfiguration": true
+}
+```
+
+* /addContactToHost
+```json 
+{
+	"contactName": "bob",
+	"hostName": "HostName",
+	"exportConfiguration": true
+}
+```
+
+* /addParentToHost
+```json 
+{
+	"ParentName": "bob",
+	"hostName": "HostName",
+	"exportConfiguration": true
+}
+```
+
+* /deleteParentFromExistingHost
+```json 
+{
+	"ParentName": "bob",
+	"hostName": "HostName",
+	"exportConfiguration": true
+}
+```
+
+* /addContactGroupToHost
+```json 
+{
+	"contactGroupName": "admins",
+	"hostName": "HostName",
+	"exportConfiguration": true
+}
+```
+
+* /createHostTemplate
+```json 
+{
+	"templateHostName": "TEMPLATE_HOST",
+	"exportConfiguration": true
+}
+```
+
+* /getHostByAddress
+```json 
+{
+	"hostAddress": "127.0.0.1"
+}
+```
+
+
+* /addHostTemplateToHost
+```json 
+{
+	"templateHostName": "TEMPLATE_HOST",
+	"hostName": "HostName",
+	"exportConfiguration": true
+}
+```
+
+* /addContactToHostTemplate
+```json 
+{
+	"contactName": "bob",
+	"templateHostName": "TEMPLATE_HOST",
+	"exportConfiguration": true
+}
+```
+
+* /addContactGroupToHostTemplate
+```json 
+{
+	"contactGroupName": "admins",
+	"templateHostName": "TEMPLATE_HOST",
+	"exportConfiguration": true
+}
+```
+
+**NB :** Le paramètre facultatif "exportConfiguration" (booléen true ou false) permet l'exportation de la configuration nagios. Un appel API n'a pas besoin systématiquement d'un rechargement de configuration nagios. C'est pourquoi vous devez définir ce paramètre en fonction de vos besoins.
+
+### d. Comment ajouter de nouvelles focntionnalités à l'API
+
+L'API RGM est un projet open source. Vous pouvez donc ajouter des fonctionnalités en fonction de vos besoins. 
+L'API REST est principalement basée sur des appels de fonctions. Les fonctions sont définies dans le fichier "ObjectManager.php". 
+
+Pour rendre lesfonctions disponibles à distance (via appels HTTP avec token), il faut déclarer la nouvelle fonction "ObjectManager" dans index.php en ajoutant une route.
+Un "framework" a été développé afin d'ajouter très facilement des routes.
+La fonction "addRoute" ($ httpMethod, $ routeName, $ methodName) vous permet de générer automatiquement la route et la fonction, en fonction de la méthode "ObjectManager".
+
+**Exemple :**
+
+```php
+#index.php
+addRoute('post', '/createHost', 'createHost' );
+```
+
+**NB :** Le paramètre "$methodName" est l'URL d'action (appel d'itinéraire) définie dans le tableau d'entités. Elle doit avoir le même nom que la méthode définie dans "ObjectManager.php".
+
+### e. Sécurité et chiffrement
+
+Si vous accédez à l'API dans votre réseau local sécurisé, vous pouvez simplement utiliser HTTP. 
+
+Dans les environnements non sécurisés (par exemple lors de l'accès à votre serveur RGM via Internet), vous devez utiliser les requêtes HTTPS pour vous assurer que vos paramètres et mots de passe sont cryptés. De cette façon, toutes les communications entre le serveur RGM et votre client seront cryptées via le protocol SSL.
+
+### f. Versionning
+
+La plupart des réponses JSON de l'API contiennent un champ "api_version", celui-ci contient la version API du serveur RGM. Vos développeurs d'applications devront prendre en compte cette version pour des raisons de compatibilité.
+
+### g. La gestion des erreurs
+
+Chaque réponse à un appel API contient un code d'état. Ces codes d'état ont une signification et sont référencés dans le tableau ci-dessous:
+
+| Status Code | Meaning      | Comments                                                     |
+| ----------- | ------------ | ------------------------------------------------------------ |
+| `200`       | OK           | The API call was completed successfully, the JSON response contains the result data. |
+| `400`       | Bad Request  | The API call could not be completed successfully. The XML response contains the error message. |
+| `401`       | Unauthorized | The username/password or token credentials of your authentication can not be accepted. |
