@@ -1072,3 +1072,81 @@ Ce menu permet l’accès à la configuration de « Grafana » et la création d
 Pour une documentation complète sur l’utilisation de « Grafana » se référer à la page suivante :
 
 https://grafana.com/docs/grafana/latest/
+
+
+
+## L'API RGM "RGMAPI"
+
+RGM dispose d’une API « RESTful » basée sur le protocole HTTP/HTTPS. 
+
+Celle-ci, dénommée « RGMAPI », permet aux différentes solutions ou programmes externes d'accéder aux informations de la base de données de supervision, et donc de manipuler les objets RGM stockés dans la base de données via des requêtes « HTTP GET/POST » avec des retours sous format « JSON ».
+
+Les principales fonctions disponibles sont l’authentification avec compte/mot de passe, la création l’édition, et la suppression d’objets RGM.
+
+### c. Utilisation de l'API
+
+L’ensemble des appels API de « RGMAPI » sont exécutés via des requêtes « HTTP GET/POST ». Les Urls d’appels nécessite une clé API privée valide (Token) disponible pour chaque utilisateur RGM sous forme paramètre URI ou d'en-tête HTTP. Dans les deux cas, le nom du paramètre est un jeton.
+
+Vous devez fournir un jeton valide pour les demandes authentifiées. Un jeton a une période TTL « Time To Live », limitée par défaut 3600 secondes et sera purgé après son expiration.
+
+Afin de pouvoir utiliser l’API « RGMAPI », il faut donc d’abord générer son « APIKEY » pour s’authentifier et pouvoir exécuter des actions via l’API par la suite.
+
+```
+​```shell
+curl -k https://127.0.0.1/rgmapi/getAuthToken?&username=admin&password=my_smart_password
+​```
+```
+
+**Attention** : La génération de la clé API ne peut se faire qu’avec un utilisateur RGM local et disposant des droits « Admin ». Appelez la requête getAuthToken avec la méthode GET et les paramètres de nom d'utilisateur et de mot de passe.
+
+![](md_pics/rgmapi1.png)
+
+**NB:** Notez la version « rgmapi_version » à implémenter dans vos applications.
+
+Le jeton unique est un jeton spécial, comme son nom l’indique. Ce jeton n'est valide que lors de son premier appel et expire directement après. De plus, son utilisation est limitée à des actions très spécifiques (par exemple, la création de « Host » dans RGM).
+
+Ces jetons sont générés automatiquement par RGM pour faciliter les déploiements d'actifs.
+
+Vous êtes libre de fournir le jeton en tant que paramètre URI ou en-tête HTTP. Notez que le paramètre URI a la priorité.
+
+**Exemple avec paramètre URI :**
+
+```shell
+curl -k 'https://127.0.0.1/rgmapi/checkAuthToken?&token=87523048d9821fa4660d162f5bd10a227f7c1d8b19c11309a6cc7d5a0f13a00b'
+```
+
+**Exemple avec entête HTTP :**
+
+```shell
+curl -k -H 'token: 87523048d9821fa4660d162f5bd10a227f7c1d8b19c11309a6cc7d5a0f13a00b' 'https://127.0.0.1/rgmapi/checkAuthToken'
+```
+
+![](md_pics/rgmapi2.png)
+
+On peut désormais tester et valider l’utilisation de la clé API avec une commande basique de type : 
+
+```shell
+https://[RGM_IP]/rgmapi/[API_function]?&username=[username]&token=[token]
+```
+
+Voci la liste actualisée des actions ("API_function") possibles avec « RGMAPI » :
+
+```
+| Action URL **[API_function]** | Request type | Parameters (body/payload) | Expected response | Comments |
+| --- | --- | --- | --- | --- |
+| `checkAuthToken` | GET | None | "status": "authorized" | Confirm that the provided token has admin privileges and the permission to make advanced API calls. |
+| `createHost` | POST | [**templateHostName, hostName, hostIp, hostAlias, contactName, contactGroupName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Create a nagios host (affected to the provided parent template [templateHostName]) if not exists and reload lilac configuration. Posibility to attach a contact and/or a contact group to the host in the same time. |
+| `deleteHost` | POST | [**hostName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Delete a nagios host. |
+| `deleteParentFromExistingHost` | POST | [**ParentName,hostName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Delete a nagios host. |
+| `createService` | POST | [**hostName, services, exportConfiguration**] The parameter **services** is an array with the service(s) name as a key, the service template as first parameter, and the following optional service arguments linked to the service template. | "http_code": "200 OK", "result": [with the executed actions] | Add service(s) to an existant host and reload lilac configuration. To add a service, please see the parameters column. It will add a service to a specified nagios host with as many service arguments as needed. |
+| `createUser` | POST | [**userName, userMail, admin, filterName, filterValue, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Create a nagios contact and a RGM user. The user could be limited or admin (depends on the parameter "admin"). Limited user: admin=false / admin user: admin=true. For a limited user, the GED xml file is created in /srv/rgm/RGMweb/cache/ with the filters specified in parameters. |
+| `addContactToHost` | POST | [**contactName, hostName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Attach a nagios contact to a host if not already attached. |
+| `addParentToHost` | POST | [**ParentName, hostName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Attach a nagios contact to a host if not already attached. |
+| `addContactGroupToHost` | POST | [**contactGroupName, hostName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Attach a nagios contact group to a host if not already attached. |
+| `createHostTemplate` | POST | [**templateHostName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Create a new nagios host template. |
+| `addHostTemplateToHost` | POST | [**templateHostName, hostName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Add a host template to a nagios host. |
+| `addContactToHostTemplate` | POST | [**contactName, templateHostName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Add a contact to a nagios host template. |
+| `addContactGroupToHostTemplate` | POST | [**contactGroupName, templateHostName, exportConfiguration**] | "http_code": "200 OK", "result": [with the executed actions] | Add a contact group to a nagios host template. |
+| `exportConfiguration` | POST | [**jobName**] | "http_code": "200 OK", "result": [with the executed actions] | Export Nagios Configuration. |
+| `getHostByAddress` | POST | [**hostAddress**] | "http_code": "200 OK", "result": [List of host with Address] | Return a list. |
+```
